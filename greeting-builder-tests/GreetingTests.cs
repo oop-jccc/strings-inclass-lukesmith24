@@ -28,14 +28,14 @@ public class GreetingTests
     [Test]
     public void ConcatTest()
     {
-        var actualGreeting = ""; // TODO: Use string.Concat to create the greeting
+        var actualGreeting = string.Concat("Hello, ", _person.FirstName, " ", _person.LastName); // TODO: Use string.Concat to create the greeting
         Assert.That(actualGreeting, Is.EqualTo(ExpectedGreeting));
     }
 
     [Test]
     public void FormatTest()
     {
-        var actualGreeting = ""; // TODO: Use string.Format to create the greeting
+        var actualGreeting = string.Format("Hello, {0} {1}", _person.FirstName, _person.LastName); // TODO: Use string.Format to create the greeting
         Assert.That(actualGreeting, Is.EqualTo(ExpectedGreeting));
     }
 
