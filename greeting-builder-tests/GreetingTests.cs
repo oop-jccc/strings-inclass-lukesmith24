@@ -42,14 +42,20 @@ public class GreetingTests
     [Test]
     public void StringBuilderTest()
     {
-        var actualGreeting = ""; // TODO: Use StringBuilder to create the greeting
+        var buffer = new StringBuilder();
+        var actualGreeting = buffer
+            .Append("Hello, ")
+            .Append(_person.FirstName)
+            .Append(" ")
+            .Append(_person.LastName)
+            .ToString(); // TODO: Use StringBuilder to create the greeting
         Assert.That(actualGreeting, Is.EqualTo(ExpectedGreeting));
     }
 
     [Test]
     public void InterpolationTest()
     {
-        var actualGreeting = ""; // TODO: Use string interpolation to create the greeting
+        var actualGreeting = $"Hello, {_person.FirstName} {_person.LastName}"; // TODO: Use string interpolation to create the greeting 
         Assert.That(actualGreeting, Is.EqualTo(ExpectedGreeting));
     }
 }
